@@ -13,5 +13,7 @@ end
 gem 'jquery-rails'
 
 # gems for omniauth and devise
-gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+gem 'devise', :git => 'git@github.com:plataformatec/devise.git'
 gem 'omniauth'
+gem 'omniauth-facebook'
+
