@@ -1,7 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
-gem 'mysql2'
+gem 'sqlite3'
+gem 'thin'
 
 # asset pipeline
 group :assets do
@@ -10,8 +11,13 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development, :test do
+  gem 'debugger'
+end
+
 gem 'jquery-rails'
 
 # gems for omniauth and devise
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 gem 'omniauth'
+gem 'omniauth-facebook'

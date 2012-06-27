@@ -46,7 +46,9 @@ class AuthenticationsController < ApplicationController
     else
       user = User.new
       user.apply_omniauth(omniauth)
-      user.email = omniauth['extra'] && omniauth['extra']['user_hash'] && omniauth['extra']['user_hash']['email']
+      #user.email = omniauth['extra'] && omniauth['extra']['user_hash'] && omniauth['extra']['user_hash']['email']
+      user.email = omniauth['extra'].raw_info.email
+      user.password = "Welcome1"
       if user.save
         flash[:notice] = "Successfully registered"
         sign_in_and_redirect(:user, user)
