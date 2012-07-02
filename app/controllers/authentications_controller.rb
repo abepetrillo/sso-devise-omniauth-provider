@@ -61,8 +61,8 @@ class AuthenticationsController < ApplicationController
           # fetch the user with this email id!
           user = User.find_by_email(user.email)
           sign_in(:user, user)
-          redirect_to root_path
         end
+          redirect_to root_path
       end
     end
   end
