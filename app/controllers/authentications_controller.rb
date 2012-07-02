@@ -48,21 +48,21 @@ class AuthenticationsController < ApplicationController
       user.apply_omniauth(omniauth)
       #user.email = omniauth['extra'] && omniauth['extra']['user_hash'] && omniauth['extra']['user_hash']['email']
       user.email = omniauth['extra'].raw_info.email
-      user.password = "Welcome1"
+      user.password = Devise.friendly_token.first(20)
       if user.save
         flash[:notice] = "Successfully registered"
         sign_in_and_redirect(:user, user)
       else
         session[:omniauth] = omniauth.except('extra')
-        session[:omniauth_email] = omniauth['extra'] && omniauth['extra']['user_hash'] && omniauth['extra']['user_hash']['email']
+        session[:omniauth_email] = omniauth['extra'].raw_info.email
 
         # Check if email already taken. If so, ask user to link_accounts
         if user.errors[:email][0] =~ /has already been taken/ # omniauth? TBD
           # fetch the user with this email id!
           user = User.find_by_email(user.email)
-          return redirect_to link_accounts_url(user.id)
+          sign_in(:user, user)
+          redirect_to root_path
         end
-        redirect_to new_user_registration_url
       end
     end
   end
