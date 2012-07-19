@@ -1,0 +1,59 @@
+body {
+  background-color: #ccc;
+  font-family: "Lucida Grande", "Lucida Sans", "Helvetica", "Arial", "sans-serif";
+  
+  form {
+    -moz-box-shadow: 2px 2px 7px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 2px 2px 7px rgba(0,0,0,0.3);
+    background: white;
+    border: 10px solid #eee;
+    padding: 20px;
+    margin: 0px auto 40px;
+    width: 500px;
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    label {
+      display: block;
+      font-weight: bold;
+      float:left;
+      width:35%;
+    }
+
+    input {
+      display: block;
+      font-size: 18px;
+      padding: 4px 8px;
+      margin-bottom: 10px;
+      width: 60%;
+      float:left;
+
+      &[type="submit"] {
+        width:60%;
+        margin-top:5px;
+        margin-left:auto;
+        margin-right:auto;
+        clear:both;
+        float:none;
+      }
+    }
+
+  }
+
+  fieldset {
+    border: 1px solid #ccc;
+    border-left: 0;
+    border-right: 0;
+    padding: 10px 0;
+    input {
+      width: 90%;
+      font-size: 16px;
+    }
+  }
+
+}
