@@ -9,7 +9,7 @@ body {
     border: 10px solid #eee;
     padding: 20px;
     margin: 0px auto 40px;
-    width: 300px;
+    width: 500px;
     -moz-border-radius-bottomleft: 10px;
     -moz-border-radius-bottomright: 10px;
     -webkit-border-bottom-left-radius: 10px;
@@ -21,6 +21,8 @@ body {
     label {
       display: block;
       font-weight: bold;
+      float:left;
+      width:35%;
     }
 
     input {
@@ -28,13 +30,16 @@ body {
       font-size: 18px;
       padding: 4px 8px;
       margin-bottom: 10px;
-      width: 90%;
-        margin-left:auto;
-        margin-right:auto;
+      width: 60%;
+      float:left;
 
       &[type="submit"] {
-        width:95%;
+        width:60%;
         margin-top:5px;
+        margin-left:auto;
+        margin-right:auto;
+        clear:both;
+        float:none;
       }
     }
 
