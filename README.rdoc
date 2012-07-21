@@ -1,4 +1,4 @@
-== Single Sign-On using Devise and Omniauth ==
+== Single Sign-On using Devise and Omniauth
 
 This project was originally forked from:
 joshsoftware/sso-devise-omniauth-provider
