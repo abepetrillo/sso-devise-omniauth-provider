@@ -1,11 +1,22 @@
 == Single Sign-On using Devise and Omniauth ==
 
-We wanted to solve these problems:
+This project was originally forked from:
+joshsoftware/sso-devise-omniauth-provider
+
+as part of a blog post:
+http://blog.joshsoftware.com/2010/12/16/multiple-applications-with-devise-omniauth-and-single-sign-on/
+
+The key difference between the original and this fork, is the belief that a user should not have to input anything, 
+or set a password when registering or logging in. With this in mind, a hash is created for the password, with
+a futher intention of providing an interface for linking more than one sso id with a single user account.
+
+Objectives:
 
 * A single User Manager application (which will authenticate ALL users with different roles)
 * Different internal applications which talk to User Manager for authentication
-* User should be able to login/sign-up via Social Networks like Twitter and Facebook.
+* User should be able to login/sign-up via Social Networks like Facebook and Google.
 * Single Sign On between all applications.
+* Registration and Authentication should be a one-click process.
 
 == The Custom Provider
 
@@ -25,7 +36,6 @@ because it has the latest omniauth integration code.
 Create your Twitter App and Facebook App. Create the initializer file with the following omniauth configuration:( eg. I use config/initializers/omniauth.rb )
   
     Rails.application.config.middleware.use OmniAuth::Builder do
-      provider :twitter, 'twitter-appid', 'twitter-app-secret'
       provider :facebook, 'facebook-appid', 'facebook-app-secret'
     end
 
@@ -40,6 +50,4 @@ In your browser, go for it:
 == Contributions
 
 Please feel free to enhance this demo.
-For any doubts, please send an email to gautam@joshsoftware.com
-
-I am eager to write some rspec for this setup. If you do, please send me a pull request!
+For any doubts, please send an email to abe.petrillo@gmail.com
