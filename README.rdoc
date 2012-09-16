@@ -47,6 +47,10 @@ In your browser, go for it:
 
     http://localhost:3000
 
+== Demo
+
+There is a demo available at http://sso-demo.herokuapp.com, and I will try to keep this deployment up-to-date with the mater branch
+
 == Contributions
 
 Please feel free to enhance this demo.
