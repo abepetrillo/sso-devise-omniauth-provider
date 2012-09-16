@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
+gem 'therubyracer'
 gem 'sqlite3'
 gem 'thin'
 
@@ -18,6 +19,7 @@ end
 gem 'jquery-rails'
 
 # gems for omniauth and devise
-gem 'devise', '2.0' #,:git => 'git@github.com:plataformatec/devise.git'
+gem 'devise', '2.0'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
