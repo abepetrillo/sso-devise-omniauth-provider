@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 gem 'therubyracer'
-gem 'sqlite3'
 gem 'thin'
 
 # asset pipeline
@@ -14,6 +13,11 @@ end
 
 group :development, :test do
   gem 'debugger'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
 
 gem 'jquery-rails'
