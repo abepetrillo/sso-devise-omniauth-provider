@@ -1,4 +1,5 @@
 class AuthenticationsController < ApplicationController
+  layout "sign_up"
   before_filter :authenticate_user!, :except => [:create, :link, :add]
 
   def index

@@ -1,4 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
+  layout "sign_up"
+  
   before_filter :save_referrer, :only => :edit
 
   def new
